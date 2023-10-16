@@ -9,11 +9,6 @@
         "detour": "direct"
       },
       {
-        "tag":"google",
-        "address":"8.8.8.8",
-        "detour":"direct"
-      },
-      {
         "tag":"local",
         "address":"8.8.8.8",
         "detour":"direct"
