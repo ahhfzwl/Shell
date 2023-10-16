@@ -4,7 +4,7 @@ config=$1
 
 if [[ $config = vps ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
-  echo $config_url
+  echo "$config_url"
 fi
 exit 0
 
