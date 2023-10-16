@@ -4,8 +4,8 @@ config=$1
 
 if [[ $config = vps ]]; then
   config-url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
+  echo ${config-url}
 fi
-echo ${config-url}
 exit 0
 
 if [[ -e /root/sing-box/ ]]; then
