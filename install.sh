@@ -2,10 +2,16 @@
 config=$1
 #apt update && apt install -y openssh-server systemctl wget curl vim nano screen unzip htop
 
-if [[ $config == local ]]; then
+if [[ $config == server ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
   echo "$config_url"
 fi
+
+if [[ $config == local ]]; then
+  config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
+  echo "$config_url"
+fi
+
 exit 0
 
 if [[ -e /root/sing-box/ ]]; then
