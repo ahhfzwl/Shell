@@ -1,6 +1,6 @@
 #!/bin/bash -e
 config=$1
-echo 此脚本在Ubuntu上制作，其他系统未做测试。脚本需要unzip，请选择是否安装。
+echo 此脚本在 Ubuntu 上制作，其他系统未做测试。脚本需要 unzip ，请选择是否安装。
 echo 1.跳过
 echo 2.安装
 echo -e 0.退出'\n'
@@ -9,8 +9,8 @@ if [[ -z "$mode" ]], then
 	mode=1
 fi
 if [[ $mode == 1 ]], then
-  apt update && apt install -y wget unzip
 elif [[ $mode == 2 ]], then
+  apt update && apt install -y wget unzip
 elif [[ $mode == 0 ]], then
 fi
 
