@@ -5,7 +5,7 @@ config=$1
 if [[ $config = vps ]]; then
   config-url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
 fi
-echo $config-url
+echo ${config-url}
 exit 0
 
 if [[ -e /root/sing-box/ ]]; then
