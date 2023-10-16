@@ -3,7 +3,7 @@ config=$1
 #apt update && apt install -y openssh-server systemctl wget curl vim nano screen unzip htop
 
 if [[ $config = vps ]]; then
-  config-url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
+  $config-url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
 fi
 echo $config-url
 exit 0
