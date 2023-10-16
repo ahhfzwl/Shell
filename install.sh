@@ -1,5 +1,13 @@
 #!/bin/bash -e
 #apt update && apt install -y openssh-server systemctl wget curl vim nano screen unzip htop
+
+if [[ -e /root/sing-box/ ]]; then
+  systemctl stop sing-box
+  systemctl disable sing-box
+  rm /root/sing-box/ -rf
+  rm /etc/systemd/system/sing-box.service
+fi
+
 mkdir /root/sing-box/ && cd /root/sing-box/
 wget https://github.sock.cf/SagerNet/sing-box/releases/download/v1.5.3/sing-box-1.5.3-linux-amd64.tar.gz
 tar -xvf sing-box-*.tar.gz
