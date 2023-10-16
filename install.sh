@@ -1,9 +1,20 @@
 #!/bin/bash -e
 config=$1
-#apt update && apt install -y openssh-server systemctl wget curl vim nano screen unzip htop
+echo 此脚本在Ubuntu上制作，其他系统未做测试。脚本需要unzip，请选择是否安装。
+echo 1.跳过
+echo 2.安装
+echo -e 0.退出'\n'
+read -p "请选择(默认1):" mode
+if [[ -z "$mode" ]], then
+	mode=1
+fi
+if [[ $mode == 1 ]], then
+  apt update && apt install -y wget unzip
+elif [[ $mode == 2 ]], then
+elif [[ $mode == 0 ]], then
+fi
 
-if [ -z "$config" ]
-then
+if [[ -z "$config" ]], then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
   echo "$config_url"
 fi
