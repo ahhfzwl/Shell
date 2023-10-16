@@ -2,11 +2,15 @@
 config=$1
 #apt update && apt install -y openssh-server systemctl wget curl vim nano screen unzip htop
 
+if [ -z "$config" ]
+then
+  config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
+  echo "$config_url"
+fi
 if [[ $config == server ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
   echo "$config_url"
 fi
-
 if [[ $config == local ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
   echo "$config_url"
