@@ -17,10 +17,12 @@ if [[ $config == 2 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
 fi
 
-echo 脚本需要 wget unzip ，请自行判断系统是否已安装。
-echo 1.安装
-echo 2.跳过
-read -p "请选择(默认1):" install
+if [ -z "$install" ]; then
+  echo 脚本需要 wget unzip ，请自行判断系统是否已安装。
+  echo 1.安装
+  echo 2.跳过
+  read -p "请选择(默认1):" install
+fi
 if [ -z "$install" ]; then
   install=1
 fi
