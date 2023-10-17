@@ -5,7 +5,7 @@ echo 1.跳过
 echo 2.安装
 read -p "请选择(默认1):" mode
 if [ -z "$mode" ]; then
-	mode=1
+  mode=1
 fi
 if [[ $mode == 1 ]]; then
   echo 请选择安装位置：
@@ -21,16 +21,13 @@ if [ -z "$config" ]; then
   read -p "请选择(默认1):" config
 fi
 if [[ -z "$config" ]]; then
-  config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
-  echo "$config_url"
+  config=1
 fi
 if [[ $config == 1 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
-  echo "$config_url"
 fi
 if [[ $config == 2 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
-  echo "$config_url"
 fi
 
 if [[ -e /root/sing-box/ ]]; then
