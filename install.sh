@@ -17,16 +17,16 @@ if [[ $config == 2 ]]; then
 fi
 
 echo 脚本需要 wget unzip ，请选择是否安装。
-echo 1.跳过
-echo 2.安装
+echo 1.安装
+echo 2.跳过
 read -p "请选择(默认1):" mode
 if [ -z "$mode" ]; then
   mode=1
 fi
 if [[ $mode == 1 ]]; then
-  echo 请选择安装位置：
-elif [[ $mode == 2 ]]; then
   apt update && apt install -y wget unzip
+elif [[ $mode == 2 ]]; then
+  echo 开始安装，请稍后。
 else
   echo 输入错误，脚本终止。 && exit 1
 fi
