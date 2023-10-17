@@ -1,20 +1,6 @@
 #!/bin/bash -e
 config=$1
-echo 此脚本在 Ubuntu 上制作，其他系统未做测试。脚本需要 unzip ，请选择是否安装。
-echo 1.跳过
-echo 2.安装
-read -p "请选择(默认1):" mode
-if [ -z "$mode" ]; then
-  mode=1
-fi
-if [[ $mode == 1 ]]; then
-  echo 请选择安装位置：
-elif [[ $mode == 2 ]]; then
-  apt update && apt install -y wget unzip
-else
-  echo 输入错误，脚本终止。 && exit 1
-fi
-
+echo 此脚本在 Ubuntu 上制作，其他系统未做测试。
 if [ -z "$config" ]; then
   echo 1.在服务器上安装
   echo 2.在本地设备安装
@@ -28,6 +14,21 @@ if [[ $config == 1 ]]; then
 fi
 if [[ $config == 2 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
+fi
+
+echo 脚本需要 wget unzip ，请选择是否安装。
+echo 1.跳过
+echo 2.安装
+read -p "请选择(默认1):" mode
+if [ -z "$mode" ]; then
+  mode=1
+fi
+if [[ $mode == 1 ]]; then
+  echo 请选择安装位置：
+elif [[ $mode == 2 ]]; then
+  apt update && apt install -y wget unzip
+else
+  echo 输入错误，脚本终止。 && exit 1
 fi
 
 if [[ -e /root/sing-box/ ]]; then
