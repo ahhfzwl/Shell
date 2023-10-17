@@ -11,11 +11,13 @@ then
 fi
 if [ $mode == 1 ]
 then
+echo 1.跳过
 elif [ $mode == 2 ]
 then
   apt update && apt install -y wget unzip
 elif [ $mode == 0 ]
 then
+echo 2.安装
 fi
 
 if [[ -z "$config" ]], then
