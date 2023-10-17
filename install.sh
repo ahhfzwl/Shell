@@ -25,11 +25,11 @@ if [[ -z "$config" ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
   echo "$config_url"
 fi
-if [[ $config == server ]]; then
+if [[ $config == 1 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-server.json"
   echo "$config_url"
 fi
-if [[ $config == local ]]; then
+if [[ $config == 2 ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config-local.json"
   echo "$config_url"
 fi
