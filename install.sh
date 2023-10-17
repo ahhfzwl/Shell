@@ -16,6 +16,11 @@ elif [[ $mode == 0 ]]; then
 echo 2.安装
 fi
 
+if [ -z "$config" ]; then
+  echo 1.在服务器上安装
+  echo 2.在本地设备安装
+  read -p "请选择(默认1):" config
+fi
 if [[ -z "$config" ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
   echo "$config_url"
