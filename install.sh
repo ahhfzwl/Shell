@@ -8,6 +8,7 @@ if [ -z "$mode" ]; then
 	mode=1
 fi
 if [[ $mode == 1 ]]; then
+  echo 请选择安装位置：
 elif [[ $mode == 2 ]]; then
   apt update && apt install -y wget unzip
 else
