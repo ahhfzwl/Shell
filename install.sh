@@ -5,21 +5,18 @@ echo 1.跳过
 echo 2.安装
 echo -e 0.退出'\n'
 read -p "请选择(默认1):" mode
-if [ -z "$mode" ] then
+if [ -z "$mode" ]; then
 	mode=1
 fi
-if [ $mode == 1 ]
-then
+if [[ $mode == 1 ]]; then
 echo 1.跳过
-elif [ $mode == 2 ]
-then
+elif [[ $mode == 2 ]]; then
   apt update && apt install -y wget unzip
-elif [ $mode == 0 ]
-then
+elif [[ $mode == 0 ]]; then
 echo 2.安装
 fi
 
-if [[ -z "$config" ]], then
+if [[ -z "$config" ]]; then
   config_url="https://raw.sock.cf/ahhfzwl/my/main/config.json"
   echo "$config_url"
 fi
