@@ -1,3 +1,3 @@
-bash <(curl -Ls https://raw.sock.cf/ahhfzwl/my/main/install.sh) 1 1
+apt update && apt -y install bash curl wget unzip && bash <(curl -Ls https://raw.sock.cf/ahhfzwl/my/main/install.sh) 1 2
 
 https://fscarmen.cloudflare.now.cc/
