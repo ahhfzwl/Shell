@@ -50,4 +50,5 @@ chmod +x /root/sing-box/sing-box
 wget -O /root/sing-box/config.json $config_url
 wget -O /etc/systemd/system/sing-box.service https://raw.sock.cf/ahhfzwl/my/main/sing-box.service
 systemctl enable sing-box
+systemctl restart sing-box
 wget -O /root/sing-box/systemctl.sh https://raw.sock.cf/ahhfzwl/my/main/systemctl.sh
