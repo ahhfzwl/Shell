@@ -5,7 +5,7 @@ echo 1.跳过
 echo 2.安装
 echo -e 0.退出'\n'
 read -p "请选择(默认1):" mode
-if [[ -z "$mode" ]], then
+if [ -z "$mode" ] then
 	mode=1
 fi
 if [ $mode == 1 ]
