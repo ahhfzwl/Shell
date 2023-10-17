@@ -33,8 +33,6 @@ if [[ $config == 2 ]]; then
   echo "$config_url"
 fi
 
-exit 0
-
 if [[ -e /root/sing-box/ ]]; then
   systemctl stop sing-box
   systemctl disable sing-box
