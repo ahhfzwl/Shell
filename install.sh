@@ -1,5 +1,6 @@
 #!/bin/bash -e
 config=$1
+mode=$2
 echo 此脚本在 Ubuntu 上制作，其他系统未做测试。
 if [ -z "$config" ]; then
   echo 1.在服务器上安装
@@ -19,13 +20,13 @@ fi
 echo 脚本需要 wget unzip ，请自行判断系统是否已安装。
 echo 1.安装
 echo 2.跳过
-read -p "请选择(默认1):" mode
-if [ -z "$mode" ]; then
-  mode=1
+read -p "请选择(默认1):" install
+if [ -z "$install" ]; then
+  install=1
 fi
-if [[ $mode == 1 ]]; then
+if [[ $install == 1 ]]; then
   apt update && apt install -y wget unzip
-elif [[ $mode == 2 ]]; then
+elif [[ $install == 2 ]]; then
   echo 开始安装，请稍后。
 else
   echo 输入错误，脚本终止。 && exit 1
