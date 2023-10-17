@@ -1,6 +1,6 @@
 #!/bin/bash -e
 config=$1
-mode=$2
+install=$2
 echo 此脚本在 Ubuntu 上制作，其他系统未做测试。
 if [ -z "$config" ]; then
   echo 1.在服务器上安装
