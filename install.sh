@@ -35,12 +35,14 @@ else
 fi
 
 if [[ -e /root/sing-box/ ]]; then
+  echo 检测到已安装 Sing-box 服务，开始卸载。
   systemctl stop sing-box
   systemctl disable sing-box
   rm /root/sing-box/ -rf
   rm /etc/systemd/system/sing-box.service
 fi
-
+read -p "旧版本已卸载，按任意键安装新版本:" download
+  
 mkdir /root/sing-box/ && cd /root/sing-box/
 wget https://github.sock.cf/SagerNet/sing-box/releases/download/v1.5.3/sing-box-1.5.3-linux-amd64.tar.gz
 tar -xvf sing-box-*.tar.gz
