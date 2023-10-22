@@ -75,14 +75,14 @@
       "server_port":2408,
       "local_address":[
         "172.16.0.2/32",
-        "2606:4700:110:8e4b:cffc:806e:252b:d955/128"
+        "2606:4700:110:86f6:10e8:1580:1aee:158f/128"
       ],
-      "private_key":"wEPJHzC+41nIupHuJmDoNcnpOQI7gpMT1LJfhGXE+XM=",
+      "private_key":"aODqCVIjMY/Eu976+stbDkIWfkEbj8+5TdTLXTS9Ik4=",
       "peer_public_key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved":[
-        148,
-        160,
-        53
+        29,
+        47,
+        26
       ],
       "mtu":1280
     },
