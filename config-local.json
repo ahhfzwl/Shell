@@ -2,11 +2,9 @@
   "dns": {
     "servers": [
       {
-        "tag": "cloudflare",
-        "address": "1.1.1.1",
-        "address_strategy": "prefer_ipv4",
-        "strategy": "ipv4_only",
-        "detour": "wireguard-out"
+        "tag":"google",
+        "address":"tls://8.8.4.4",
+        "detour":"wireguard-out"
       },
       {
         "tag":"local",
@@ -16,7 +14,7 @@
     ],
     "rules":[
       {
-        "domain":"www.baidu.com",
+        "domain":"servername.com",
         "geosite":"cn",
         "server":"local"
       }
@@ -25,11 +23,11 @@
   "route":{
     "geoip":{
       "download_url":"https://github.sock.cf/SagerNet/sing-geoip/releases/latest/download/geoip.db",
-      "download_detour":"wireguard-out"
+      "download_detour":"direct"
     },
     "geosite":{
       "download_url":"https://github.sock.cf/SagerNet/sing-geosite/releases/latest/download/geosite.db",
-      "download_detour":"wireguard-out"
+      "download_detour":"direct"
     },
     "rules":[
       {
