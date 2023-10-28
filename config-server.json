@@ -3,7 +3,7 @@
     "servers": [
       {
         "tag":"local",
-        "address":"8.8.4.4",
+        "address":"tls://8.8.4.4",
         "detour":"direct"
       }
     ],
