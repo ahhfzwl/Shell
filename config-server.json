@@ -46,7 +46,7 @@
       "listen_port": 10808,
       "users": [
         {
-          "name": "sekai",
+          "name": "vmess",
           "uuid": "11112222-3333-4444-aaaa-bbbbccccdddd",
           "alterId": 0
         }
