@@ -2,7 +2,7 @@
 config=$1
 install=$2
 echo 此脚本在 Ubuntu 上制作，其他系统未做测试。
-case "$(uname -m)" in x86_64|x64|x64)uname=amd64;;i386|i686)uname=x86;;armv8|arm64|aarch64)uname=armv8;;armv7l)uname=armv7;;*)echo none && exit;esac && echo $uname
+case "$(uname -m)" in x86_64|amd64|x64)cpu=amd64;;i386|i686)cpu=386;;armv8|arm64|aarch64)cpu=arm64;;armv6l|armv7|armv7l)cpu=armv7;;*)echo "none cpu" && exit;esac && echo $cpu
 if [ -z "$config" ]; then
   echo 1.在服务器上安装
   echo 2.在本地设备安装
