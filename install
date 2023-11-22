@@ -1,52 +1,51 @@
-install() {
-if [ -z `type -P cron` ]; then
-  APK="cron"
-fi
-if [ -z `type -P nano` ]; then
-  APK="$APK nano"
-fi
-if [ -z `type -P wget` ]; then
-  APK="$APK wget"
-fi
-if [ -z `type -P curl` ]; then
-  APK="$APK curl"
-fi
-if [ -z `type -P iputils-ping` ]; then
-  APK="$APK iputils-ping"
-fi
-if [ -z `type -P net-tools` ]; then
-  APK="$APK net-tools"
-fi
-if [ -z `type -P iproute2` ]; then
-  APK="$APK iproute2"
-fi
-if [ -z `type -P dnsutils` ]; then
-  APK="$APK dnsutils"
-fi
-if [ -z `type -P socat` ]; then
-  APK="$APK socat"
-fi
-if [ -z `type -P openssh-server` ]; then
-  APK="$APK openssh-server"
-fi
-if [ -z `type -P screen` ]; then
-  APK="$APK screen"
-fi
-if [ -z `type -P htop` ]; then
-  APK="$APK htop"
-fi
-if [ -z `type -P systemctl` ]; then
-  APK="$APK systemctl"
-fi
-if [ -z `type -P bc` ]; then
-  APK="$APK bc"
-fi
-if [ -z `type -P tcptraceroute` ]; then
-  APK="$APK tcptraceroute"
-fi
-if [ -z `type -P natcat` ]; then
-  APK="$APK natcat"
-fi
-echo "$APK"
-
+identify_the_operating_system_and_architecture() {
+  if [ -z `type -P cron` ]; then
+    APK="cron"
+  fi
+  if [ -z `type -P nano` ]; then
+    APK="$APK nano"
+  fi
+  if [ -z `type -P wget` ]; then
+    APK="$APK wget"
+  fi
+  if [ -z `type -P curl` ]; then
+    APK="$APK curl"
+  fi
+  if [ -z `type -P iputils-ping` ]; then
+    APK="$APK iputils-ping"
+  fi
+  if [ -z `type -P net-tools` ]; then
+    APK="$APK net-tools"
+  fi
+  if [ -z `type -P iproute2` ]; then
+    APK="$APK iproute2"
+  fi
+  if [ -z `type -P dnsutils` ]; then
+    APK="$APK dnsutils"
+  fi
+  if [ -z `type -P socat` ]; then
+    APK="$APK socat"
+  fi
+  if [ -z `type -P openssh-server` ]; then
+    APK="$APK openssh-server"
+  fi
+  if [ -z `type -P screen` ]; then
+    APK="$APK screen"
+  fi
+  if [ -z `type -P htop` ]; then
+    APK="$APK htop"
+  fi
+  if [ -z `type -P systemctl` ]; then
+    APK="$APK systemctl"
+  fi
+  if [ -z `type -P bc` ]; then
+    APK="$APK bc"
+  fi
+  if [ -z `type -P tcptraceroute` ]; then
+    APK="$APK tcptraceroute"
+  fi
+  if [ -z `type -P natcat` ]; then
+    APK="$APK natcat"
+  fi
+  echo "$APK"
 }
