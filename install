@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-identify_the_operating_system_and_architecture() {
+install() {
   if [ -z `type -P cron` ]; then
     APK="cron"
   fi
