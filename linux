@@ -5,13 +5,17 @@
 阿里02M wget -O /dev/null "https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
 网易01M wget -O /dev/null "http://mirrors.163.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
 清华00M wget -O /dev/null "https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
-#SPEEDTEST测速：
-mkdir speedtest && cd ./speedtest && wget https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz && gunzip ookla-speedtest-1.2.0-linux-x86_64.tgz && tar -xvf ookla-speedtest-1.2.0-linux-x86_64.tar && chmod 777 speedtest && ./speedtest
+
+mkdir speedtest && cd ./speedtest && wget https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz && gunzip ookla-speedtest-1.2.0-linux-x86_64.tgz && tar -xvf ookla-speedtest-1.2.0-linux-x86_64.tar && chmod 777 speedtest && ./speedtest #SPEEDTEST测速
+
 #列出公网地址 | sed文本编辑器 -n只输出结果 s/替换 .*inet6从行头到inet6 \([0-9a-f:]\+\)逐个查找[]内的字符并保存到第一个变量 .*后面的所有内容 /新内容 \1第一个变量的内容
 ip -6 addr list scope global | sed -n 's/.*inet6 \([0-9a-f:]\+\).*/\1/p' | head -n 1
+
 #获取ipv6地址 | 显示含有inet6的行 | 打印第2列参数 | 排除/以及后面的值 | 删除以fe开头的行 | 删除以::开头的行 | 输出结果
 ip -6 addr list scope global | grep 'inet6' | awk '{print $2}' | cut -d'/' -f1 | head -n 1
-ps aux|grep cron #查找进程
+
+ps aux | grep -v 'grep' | grep 'cron' #查找进程
+pidof 'cron' #输出进程PID
 netstat -aptn #查看开放的端口
 arp -a #查看连接的IP地址
 cat /proc/net/nf_conntrack |grep 192.168.1.18|wc -l #查看单IP连接数
