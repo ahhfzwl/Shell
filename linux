@@ -1,0 +1,46 @@
+#国内镜像测速：
+华为15M wget -O /dev/null "https://repo.huaweicloud.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
+科大14M wget -O /dev/null "https://mirrors.ustc.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"
+腾讯13M wget -O /dev/null "https://mirrors.cloud.tencent.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
+阿里02M wget -O /dev/null "https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
+网易01M wget -O /dev/null "http://mirrors.163.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
+清华00M wget -O /dev/null "https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso"
+#SPEEDTEST测速：
+mkdir speedtest && cd ./speedtest && wget https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz && gunzip ookla-speedtest-1.2.0-linux-x86_64.tgz && tar -xvf ookla-speedtest-1.2.0-linux-x86_64.tar && chmod 777 speedtest && ./speedtest
+#列出公网地址 | sed文本编辑器 -n只输出结果 s/替换 .*inet6从行头到inet6 \([0-9a-f:]\+\)逐个查找[]内的字符并保存到第一个变量 .*后面的所有内容 /新内容 \1第一个变量的内容
+ip -6 addr list scope global | sed -n 's/.*inet6 \([0-9a-f:]\+\).*/\1/p' | head -n 1
+#获取ipv6地址 | 显示含有inet6的行 | 打印第2列参数 | 排除/以及后面的值 | 删除以fe开头的行 | 删除以::开头的行 | 输出结果
+ip -6 addr list scope global | grep 'inet6' | awk '{print $2}' | cut -d'/' -f1 | head -n 1
+ps aux|grep cron #查找进程
+netstat -aptn #查看开放的端口
+arp -a #查看连接的IP地址
+cat /proc/net/nf_conntrack |grep 192.168.1.18|wc -l #查看单IP连接数
+dd if=/dev/sda bs=1M |pv |gzip -1 > sda.img.gz #磁盘工具 读取磁盘 单次容量 显示进度 压缩工具 压缩比例 写入文件
+
+cp /etc/apt/sources.list /etc/apt/sources.list.back #备份源文件
+cat /etc/apt/sources.list #查看源地址
+sed -i "s@http://ports.ubuntu.com/@https://repo.huaweicloud.com/ubuntu-ports/@g"; /etc/apt/sources.list #修改源地址
+
+apt update
+apt install -y cron nano wget curl iputils-ping net-tools iproute2 dnsutils socat openssh-server screen htop systemctl
+apt install -y bc tcptraceroute && wget http://www.vdberg.org/~richard/tcpping -O /usr/bin/tcping && chmod +x /usr/bin/tcping
+
+nc -v -u -z -w5 162.159.193.10 2408
+
+wget -qO- bench.sh | bash #检测vps
+
+case "$(uname -m)" in x86_64|x64|x64)uname=amd64;;i386|i686)uname=x86;;armv8|arm64|aarch64)uname=armv8;;armv7l)uname=armv7;;*)echo none;esac && echo $uname #判断处理器架构
+
+current_tty=$(tty); pts_list=$(who | awk '{print $2}'); for pts in $pts_list; do if [ "$current_tty" != "/dev/$pts" ]; then pkill -9 -t $pts; fi; done; echo 'root:160570' | chpasswd && sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config && systemctl restart sshd.service; current_tty=$(tty); pts_list=$(who | awk '{print $2}'); for pts in $pts_list; do if [ "$current_tty" != "/dev/$pts" ]; then pkill -9 -t $pts; fi; done #抢小鸡改密码命令
+
+#ubuntu修改网关
+ip route add default via 192.168.2.1 dev eth0
+ip route del default via 192.168.2.10 dev eth0
+
+curl -Lko /dev/null -H "Host: github.com" https://qq.com/hzyitc/armbian-onecloud/releases/download/ci-20231122-125058-UTC/Armbian-unofficial_23.11.0-trunk_Onecloud_jammy_current_6.1.63_xfce_desktop.burn.img.xz --resolve qq.com:443:20.205.243.166 #域前置
+
+curl -Lo /dev/null https://cdn.cloudflare.steamstatic.com/steam/apps/256870924/movie_max.mp4 --resolve cdn.cloudflare.steamstatic.com:443:104.26.15.254 #CF测速
+
+curl https://speed.cloudflare.com:9443/meta --resolve speed.cloudflare.com:9443:110.72.100.147 #查询反代机房位置
+
+https://auto.udns.dev:671/dns-query
