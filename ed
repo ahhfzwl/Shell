@@ -1,0 +1,56 @@
+{
+  "clientTcpRtt":236,
+  "longitude":"-118.24400",
+  "httpProtocol":"HTTP/2",
+  "tlsCipher":"AEAD-AES128-GCM-SHA256",
+  "continent":"NA",
+  "asn":9808,
+  "clientAcceptEncoding":"gzip, deflate, br",
+  "country":"US",
+  "tlsClientAuth":{
+    "certIssuerDNLegacy":"",
+    "certIssuerSKI":"",
+    "certSubjectDNRFC2253":"",
+    "certSubjectDNLegacy":"",
+    "certFingerprintSHA256":"",
+    "certNotBefore":"",
+    "certSKI":"",
+    "certSerial":"",
+    "certIssuerDN":"",
+    "certVerified":"NONE",
+    "certNotAfter":"",
+    "certSubjectDN":"",
+    "certPresented":"0",
+    "certRevoked":"0",
+    "certIssuerSerial":"",
+    "certIssuerDNRFC2253":"",
+    "certFingerprintSHA1":""
+  },
+  "tlsExportedAuthenticator":{
+    "clientFinished":"16417e3196c646fd4ef49189c667a07d8cb928891973f1f387b8cff75287a42a",
+    "clientHandshake":"309c521960b57ff2007003e6332584f4ee2752e03e99dfb0a424b32d2b8c15df",
+    "serverHandshake":"6adedeeb4ae4f2b9a0b0912d880136f6f673612deaacad0d761f50d4f564b6d2",
+    "serverFinished":"ba1f5b2fb4fafb18153a554705b811a9f171fbd0e6dd62cb9dcc1c0ca7f9c249"
+  },
+  "tlsVersion":"TLSv1.3",
+  "colo":"SEA",
+  "timezone":"America/Los_Angeles",
+  "latitude":"34.05440",
+  "region":"California",
+  "requestPriority":"weight=256;exclusive=1",
+  "verifiedBotCategory":"",
+  "edgeRequestKeepAliveStatus":1,
+  "regionCode":"CA",
+  "asOrganization":"China Mobile",
+  "pagesHostName":"ed-page.pages.dev",
+  "botManagement":{
+    "corporateProxy":false,
+    "verifiedBot":false,
+    "jsDetection":{
+      "passed":false
+    },
+    "staticResource":false,
+    "detectionIds":{},
+    "score":99
+  }
+}
