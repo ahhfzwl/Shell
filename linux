@@ -39,8 +39,8 @@ case "$(uname -m)" in x86_64|x64|x64)uname=amd64;;i386|i686)uname=x86;;armv8|arm
 
 #抢小鸡改密码命令
 for pts in `who | awk '{print $2}'`;do if [ `tty` != /dev/$pts ];then pkill -9 -t $pts;fi;done;echo 'root:160570'|chpasswd
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-systemctl restart ssh
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g;s/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+service ssh restart
 
 #ubuntu修改网关
 ip route add default via 192.168.2.1 dev eth0
