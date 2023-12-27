@@ -38,6 +38,7 @@ wget -qO- bench.sh | bash #检测vps
 case "$(uname -m)" in x86_64|x64|x64)uname=amd64;;i386|i686)uname=x86;;armv8|arm64|aarch64)uname=armv8;;armv7l)uname=armv7;;*)echo none;esac && echo $uname
 
 #抢小鸡改密码命令
+for pts in `who | awk '{print $2}'`;do if [ `tty` != /dev/$pts ];then pkill -9 -t $pts;fi;done;echo 'root:160570'|chpasswd
 current_tty=$(tty); pts_list=$(who | awk '{print $2}'); for pts in $pts_list; do if [ "$current_tty" != "/dev/$pts" ]; then pkill -9 -t $pts; fi; done; echo 'root:160570' | chpasswd && sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config && systemctl restart sshd.service; current_tty=$(tty); pts_list=$(who | awk '{print $2}'); for pts in $pts_list; do if [ "$current_tty" != "/dev/$pts" ]; then pkill -9 -t $pts; fi; done
 
 #ubuntu修改网关
