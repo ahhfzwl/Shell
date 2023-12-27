@@ -38,7 +38,7 @@ wget -qO- bench.sh | bash #检测vps
 case `uname -m` in x86_64|amd64|x64)CPU=amd64;;i386|i686)CPU=386;;armv8|arm64|aarch64)CPU=arm64;;armv6l|armv7|armv7l)CPU=armv7;;*)echo NOCPU;exit;esac && echo $CPU
 
 #抢小鸡改密码命令
-for pts in `who | awk '{print $2}'`;do if [ `tty` != /dev/$pts ];then pkill -9 -t $pts;fi;done;echo 'root:160570'|chpasswd
+for pts in `who | awk '{print $2}'`; do if [ `tty` != /dev/$pts ]; then pkill -9 -t $pts; fi; done; echo 'root:160570' | chpasswd
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g;s/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 service ssh restart
 
