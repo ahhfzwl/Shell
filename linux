@@ -54,5 +54,3 @@ curl -Lo /dev/null https://cdn.cloudflare.steamstatic.com/steam/apps/256870924/m
 
 #查询反代机房位置
 curl https://speed.cloudflare.com:9443/meta --resolve speed.cloudflare.com:9443:110.72.100.147
-
-https://auto.udns.dev:671/dns-query
