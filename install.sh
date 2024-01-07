@@ -9,7 +9,7 @@ install() {
       APK="$APK $i"
     fi
   done
-  if [ -z $APK ]
+  if [ -z "$APK" ]
   then
     echo "APK OK"
   else
