@@ -11,7 +11,7 @@ install_packages() {
   done
 
   if [ "${#to_install[@]}" -eq 0 ]; then
-    echo "All packages are already installed."
+    echo "所有软件包均已安装。"
   else
     local package_list="${to_install[*]}"
     echo "Installing packages: $package_list"
