@@ -7,7 +7,7 @@ software_list=("cron" "htop" "ssh" "nano" "wget" "curl" "screen" "iputils-ping" 
 for software in "${software_list[@]}"; do
   if ! dpkg -l | grep -q "^ii  $software "; then
     echo "正在安装 $software ..."
-    sudo apt-get install -y "$software"
+    apt-get install -y "$software"
     if [ $? -eq 0 ]; then
       echo "$software 安装成功！"
     else
