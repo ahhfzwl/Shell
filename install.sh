@@ -14,7 +14,7 @@ install_packages() {
     echo "所有软件包均已安装。"
   else
     local package_list="${to_install[*]}"
-    echo "Installing packages: $package_list"
+    echo "安装软件包: $package_list"
     apt update && apt -y install $package_list
   fi
 }
