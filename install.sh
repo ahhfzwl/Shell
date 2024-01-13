@@ -2,7 +2,7 @@
 # bash <(curl -Ls https://raw.sock.cf/ahhfzwl/Shell/main/install.sh)
 install() {
   APK=""
-  for i in cron htop openssh-server wget curl nano screen iputils-ping net-tools dnsutils iproute2 tcptraceroute bc socat systemctl
+  for i in cron htop ssh wget curl nano screen iputils-ping net-tools dnsutils iproute2 tcptraceroute bc socat systemctl
   do
     if [ -z `type -P $i` ]
     then
