@@ -13,6 +13,7 @@ install() {
   then
     echo "APK OK"
   else
+    echo "install $APK"
     apt update && apt -y install $APK
   fi
 }
