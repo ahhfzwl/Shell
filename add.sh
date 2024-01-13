@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# bash <(curl -Ls https://raw.sock.cf/ahhfzwl/Shell/main/add.sh)
 # 定义要安装的软件列表
 software_list=("cron" "htop" "ssh" "nano" "wget" "curl" "screen" "iputils-ping" "net-tools" "dnsutils" "iproute2" "tcptraceroute" "bc" "socat" "systemctl")
 
