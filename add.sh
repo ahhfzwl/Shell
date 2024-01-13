@@ -1,7 +1,7 @@
 #!/bin/bash
 # bash <(curl -Ls https://raw.sock.cf/ahhfzwl/Shell/main/add.sh)
 # 定义要安装的软件列表
-software_list=("cron" "htop" "ssh" "nano" "wget" "curl" "screen" "iputils-ping" "net-tools" "dnsutils" "iproute2" "tcptraceroute" "bc" "socat" "systemctl")
+software_list=("cron" "htop" "openssh-server" "nano" "wget" "curl" "screen" "iputils-ping" "net-tools" "dnsutils" "iproute2" "tcptraceroute" "bc" "socat" "systemctl")
 
 # 检测并安装缺失的软件
 for software in "${software_list[@]}"; do
