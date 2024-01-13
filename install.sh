@@ -1,5 +1,5 @@
 #!/bin/bash
-# bash <(curl -Ls https://raw./ahhfzwl/Shell/main/install.sh)
+# bash <(curl -Ls https://raw.sock.cf/ahhfzwl/Shell/main/install.sh)
 packages=("cron" "htop" "openssh-server" "nano" "wget" "curl" "screen" "iputils-ping" "net-tools" "dnsutils" "iproute2" "tcptraceroute" "bc" "socat" "systemctl")
 
 install_packages() {
