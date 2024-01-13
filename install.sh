@@ -4,8 +4,7 @@ install() {
   APK=""
   for i in cron htop ssh nano wget curl screen iputils-ping net-tools dnsutils iproute2 tcptraceroute bc socat systemctl
   do
-    if [ -z `type -P $i` ]
-    then
+    if dpkg -l | grep -q "^ii  $i "; then
       APK="$APK $i"
     fi
   done
@@ -13,7 +12,7 @@ install() {
   then
     echo "APK OK"
   else
-    echo "install $APK"
+    echo "install$APK"
     apt update && apt -y install $APK
   fi
 }
