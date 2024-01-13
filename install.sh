@@ -1,9 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-# Define the list of packages to install
 packages=("cron" "htop" "openssh-server" "nano" "wget" "curl" "screen" "iputils-ping" "net-tools" "dnsutils" "iproute2" "tcptraceroute" "bc" "socat" "systemctl")
 
-# Function to install packages if not already installed
 install_packages() {
   local to_install=()
   for pkg in "${packages[@]}"; do
@@ -21,5 +19,4 @@ install_packages() {
   fi
 }
 
-# Call the install_packages function
 install_packages
