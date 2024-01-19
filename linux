@@ -47,7 +47,7 @@ ip route add default via 192.168.2.1 dev eth0
 ip route del default via 192.168.2.10 dev eth0
 
 #域前置
-curl -Lko /dev/null -H "Host: github.com" https://qq.com/hzyitc/armbian-onecloud/releases/download/ci-20231122-125058-UTC/Armbian-unofficial_23.11.0-trunk_Onecloud_jammy_current_6.1.63_xfce_desktop.burn.img.xz --resolve qq.com:443:20.205.243.166
+curl -LkO -H "Host: github.com" --resolve g.cn:443:20.27.177.113 https://g.cn/SagerNet/sing-box/releases/download/v1.8.2/sing-box-1.8.2-linux-amd64.tar.gz
 
 #CF测速
 curl -Lo /dev/null https://cdn.cloudflare.steamstatic.com/steam/apps/256870924/movie_max.mp4 --resolve cdn.cloudflare.steamstatic.com:443:104.26.15.254
