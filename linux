@@ -28,7 +28,7 @@ sed -i "s@http://ports.ubuntu.com/@https://repo.huaweicloud.com/ubuntu-ports/@g"
 
 apt update
 apt install -y cron nano wget curl iputils-ping net-tools iproute2 dnsutils socat openssh-server screen htop systemctl
-apt install -y bc tcptraceroute && wget https://git.by.now.cc/pouriyajamshidi/tcping/releases/download/v2.4.0/tcping_Linux.tar.gz && tar -zxvf tcping_Linux.tar.gz -C /usr/bin/
+apt install -y bc tcptraceroute && wget "$(curl -s https://api.github.com/repos/cloverstd/tcping/releases/latest | grep -o "https://github.com/cloverstd/tcping/releases/download/.*/tcping-linux-$(uname -m | sed 's/x86_/amd/; s/aarch64/armhf/').*.tar.gz" | sort -V | head -n 1)" && tar -zxvf tcping-linux-*  -C  /usr/local/bin/ && rm -rf tcping-linux-*
 
 nc -v -u -z -w5 162.159.193.10 2408
 
