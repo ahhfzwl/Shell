@@ -1,0 +1,5 @@
+curl https://get.acme.sh | sh -s email=ahhfzwl@qq.com
+
+export CF_Token="_DcWcF9VnJ3noWqBmvaKjN7pOf7uFO2NIpph4bFj"
+export CF_Zone_ID="c7f5c9cdf1f4856c61075acc4446399c"
+./acme.sh --issue --dns dns_cf -d '*.by.now.cc'
